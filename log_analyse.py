@@ -98,13 +98,16 @@ def get_stats(log_folder_path):
         f.close()
     return users
 
-#Sort the dictionary on top users in terms of page views and print the report
-users = get_stats('./data/logs/*')
-orderedUsers = OrderedDict(sorted(users.items(), key=lambda x: x[1].total_pages, reverse = True))
-while len(orderedUsers) > top_user_count:
-    orderedUsers.popitem()
-print_stats(orderedUsers)
-                        
+def analyze():
+    #Sort the dictionary on top users in terms of page views and print the report
+    users = get_stats('./data/logs/*')
+    orderedUsers = OrderedDict(sorted(users.items(), key=lambda x: x[1].total_pages, reverse = True))
+    while len(orderedUsers) > top_user_count:
+        orderedUsers.popitem()
+    print_stats(orderedUsers)
+
+if __name__ == '__main__':
+    analyze()
 
                     
             
