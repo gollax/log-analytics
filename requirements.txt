@@ -25,3 +25,4 @@ tabulate==0.8.5
 Twisted==19.7.0
 w3lib==1.21.0
 zope.interface==4.6.0
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
